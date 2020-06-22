@@ -7,6 +7,7 @@ const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const indexRouter = require('./routes/index');
 const authorRoutes = require('./routes/authors');
+const bookRoutes = require('./routes/books');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({limit:'10 mb', extended : false}));
@@ -17,6 +18,7 @@ app.use(expressLayouts);
 app.use(express.static('public'));
 app.use('/', indexRouter);
 app.use('/authors', authorRoutes);
+app.use('/books', bookRoutes);
 
 
 // ---------------------------database-------------------
