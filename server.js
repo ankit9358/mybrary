@@ -9,7 +9,10 @@ const indexRouter = require('./routes/index');
 const authorRoutes = require('./routes/authors');
 const bookRoutes = require('./routes/books');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
+
+app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({limit:'10 mb', extended : false}));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
