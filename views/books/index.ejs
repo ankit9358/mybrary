@@ -18,5 +18,8 @@
 <div>
     <% books.forEach(book => { %>
     <img height="150" width="100" src="<%= book.sendCoverPath %>">
+    <a href="/books/<%= book.id %>">Show Book</a>
+    <a href="/books/<%= book.id %>/edit">Edit Book</a>
+    <%- include('../partials/deleteForm', { url: `/books/${book.id}/delete`}) %>
     <% }); %>
 </div>
