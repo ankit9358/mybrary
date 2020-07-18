@@ -1,7 +1,23 @@
-<h2>New Authors</h2>
-<form action="/authors" method="POST" >
+<br>
+<div align="center">
+    <h2 class="display-4">New Author</h2>
+    <br>
+    <form class="form-inline input-alignment justify-content-center" action="/authors" method="POST">
+        <h3 for="newAuthor" class="thin">Name</h3>
+        <div class="form-group mb-2">
+            <%- include('_form_fields.ejs') %>
+        </div>
+        <a href="/authors"><button class="mybtns btn btn-danger mb-2">Cancel</button></a>
+        <button type="submit" class="mybtns btn btn-success mb-2">Submit</button>
+    </form>
+</div>
 
-    <%- include('_form_fields.ejs') %>
+
+
+
+
+<!-- <form action="/authors" method="POST">
+   
     <a href="/authors">Cancel</a>
     <button type="submit">Create</button>
-</form>
+</form> -->

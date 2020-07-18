@@ -1,13 +1,47 @@
-<h2>Search Authors</h2>
-<form action="/authors" method="GET">
-    <label>Name</label>
-    <input type="text" name="name" value="<%= searchOption.name %>">
-    <button type="submit">Search</button>
-</form>
+<!-- <form action="/authors" method="GET"> -->
 <br>
-<% authors.forEach(author => { %>
-    <div><%= author.name %></div>
-    <a href="/authors/<%= author.id %>">Show Author</a>
-    <a href="/authors/<%= author.id %>/edit">Edit Author</a>
-    <%- include('../partials/deleteForm', { url: `/authors/${author.id}/delete`}) %>
-<% }); %>
+<div  class="row justify-content-center  align-items-center">
+    <label class="lead" for="searchbar">
+        <h2 class="thin">Search Authors</h2>
+    </label>
+    <div class="col-12 col-md-10 col-lg-8">
+        <form class="card card-sm" action="/authors" method="GET">
+            <div class="card-body row no-gutters align-items-center">
+                <div class="col-auto">
+                    <i class="fas fa-search h4 text-body"></i>
+                </div>
+                <!--end of col-->
+                <div class="col">
+                    <input id="searchbar" class="form-control form-control-lg form-control-borderless" type="text"
+                        name="name" value="<%= searchOption.name %>" placeholder="Search authors or keywords">
+                </div>
+                <!--end of col-->
+                <div class="col-auto">
+                    <button class="btn btn-lg btn-success" type="submit">Search</button>
+                </div>
+                <!--end of col-->
+            </div>
+        </form>
+    </div>
+    <!--end of col-->
+</div>
+<!-- <label>Name</label>
+    <input type="text" name="name" value="<%= searchOption.name %>">
+    <button type="submit">Search</button> -->
+<!-- </form> -->
+<br>
+<div class="flex-container justify-content-center ">
+    <% authors.forEach(author => { %>
+    <div class="authorList">
+        <div>
+            <h3 class="thin"><%= author.name %></h3>
+        </div>
+        <div class="mybtns">
+
+            <a href="/authors/<%= author.id %>"> <button class="btn btn-primary">View</button></a>
+            <a href="/authors/<%= author.id %>/edit"><button class="btn btn-primary">Edit</button></a>
+            <%- include('../partials/deleteForm', { url: `/authors/${author.id}/delete`}) %>
+        </div>
+    </div>
+    <% }); %>
+</div>

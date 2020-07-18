@@ -13,7 +13,7 @@ const methodOverride = require('method-override');
 
 
 app.use(methodOverride('_method'));
-app.use(bodyParser.urlencoded({limit:'10 mb', extended : false}));
+app.use(bodyParser.urlencoded({ limit: '10 mb', extended: false }));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.set('layout', 'layouts/layout');
@@ -26,10 +26,12 @@ app.use('/books', bookRoutes);
 
 // ---------------------------database-------------------
 const mongoose = require('mongoose');
-mongoose.connect(process.env.DATABASE_URL, {  useNewUrlParser: true,useUnifiedTopology: true });
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', error => console.error(error));
 db.once('open', () => console.log('connected to mongoose'));
+// ------------------------------------------------------
 
-
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, ()=>{
+    console.log(`Server is running on port ${process.env.PORT || 3000}`)
+});
