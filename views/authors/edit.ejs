@@ -1,7 +1,13 @@
-<h2>Edit Author</h2>
-<form action="/authors/<%= author.id %>/?_method=PUT" method="POST" >
-
-    <%- include('_form_fields.ejs') %>
-    <a href="/authors">Cancel</a>
-    <button type="submit">Create</button>
-</form>
+<br>
+<div align="center">
+    <h2 class="display-4">Edit Author</h2>
+    <br>
+    <form class="form-inline input-alignment justify-content-center" action="/authors/<%= author.id %>/?_method=PUT" method="POST">
+        <h3 for="newAuthor" class="thin">Edit Name</h3>
+        <div class="form-group mb-2">
+            <%- include('_form_fields.ejs') %>
+        </div>
+        <a href="/authors"><button class="mybtns btn btn-danger mb-2">Cancel</button></a>
+        <button type="submit" class="mybtns btn btn-success mb-2">Submit</button>
+    </form>
+</div>

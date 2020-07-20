@@ -1,9 +1,15 @@
-<h2 class="display-4">Most Recent</h2>
-<div>
-    <% books.forEach(book => { %>
-    <a href="/books/<%= book.id %>">
-        <img height="150" width="100" src="<%= book.sendCoverPath %>">
-
-    </a>
-    <% }); %>
+<br>
+<div align="center">
+    <h2 class="display-4">Most Recent</h2>
 </div>
+
+<br>
+<% books.forEach(book => { %>
+<div class="container fix-img fix-img-2">
+    <div class="box">
+        <a href="/books/<%= book.id %>">
+            <img height="250" width="210" src="<%= book.sendCoverPath %>">
+        </a>
+    </div>
+</div>
+<% }); %>

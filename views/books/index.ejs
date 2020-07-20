@@ -1,25 +1,41 @@
-<h2>Search Books</h2>
-<form action="/books" method="GET">
-    <div>
-        <label>Title</label>
-        <input type="text" name="title" value="<%= searchOption.title %>">
-    </div>
-    <div>
-        <label>Publish After</label>
-        <input type="date" name="pbafter" value="<%= searchOption.pbafter %>">
-    </div>
-    <div>
-        <label>Publish Before</label>
-        <input type="date" name="pbbefore" value="<%= searchOption.pbbefore %>">
-    </div>
-    <button type="submit">Search</button>
-</form>
 <br>
-<div>
-    <% books.forEach(book => { %>
-    <img height="150" width="100" src="<%= book.sendCoverPath %>">
-    <a href="/books/<%= book.id %>">Show Book</a>
-    <a href="/books/<%= book.id %>/edit">Edit Book</a>
-    <%- include('../partials/deleteForm', { url: `/books/${book.id}/delete`}) %>
-    <% }); %>
+<div align="center">
+    <h2 class="display-4">Search Books</h2>
+    <div class="container">
+        <form action="/books" method="GET">
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="thin">Title</h4>
+                    <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title"
+                        value="<%= searchOption.title %>">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h4 class="thin">Publish After</h4>
+                    <input type="date" class="form-control" id="title" name="pbafter"
+                        value="<%= searchOption.pbafter %>">
+                </div>
+                <div class="col-6">
+                    <h4 class="thin">Publish Before</h4>
+                    <input type="date" class="form-control" id="title" name="pbbefore"
+                        value="<%= searchOption.pbbefore %>">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success" style="margin-top: 20px;">Search</button>
+        </form>
+    </div>
+
+
 </div>
+<br>
+    <% books.forEach(book => { %>
+    <div class="container fix-img">
+        <div class="box">
+            <a href="/books/<%= book.id %>"><img height="250" width="210" src="<%= book.sendCoverPath %>"></a>
+            <%- include('../partials/deleteForm', { url: `/books/${book.id}/delete`}) %>
+            <a href="/books/<%= book.id %>/edit"><button class="btn btn-primary">Edit Book</button></a>
+        </div>
+    </div>
+    <% }); %>

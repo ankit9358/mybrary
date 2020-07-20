@@ -33,5 +33,49 @@
 .input-alignment > *{
     display: flex;
     flex-wrap: wrap;
-    margin-right: 20px;
+    margin-right: 20px ;
 }
+
+.upload textarea{
+    height: 25%;
+    resize: none;
+}
+/* ----------------------------------------for-image----------------------------------- */
+  .box{
+    float: left;
+  }
+  .box img{
+    margin: 15px;
+    border-radius: 15px;
+  }
+  .box button{
+    margin: 5px 6px 15px 22.5px;
+  }
+  .box a{
+    width: 10px;
+  }
+  @media screen and (min-width: 1200px) {
+    .fix-img{
+      margin-left: 5%;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .fix-img{
+      margin-left: 10%;
+    }
+  }
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    .fix-img{
+      margin-left: 10%;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    .fix-img{
+      margin-left: 13%;
+    }
+  }
+  @media screen and (max-width: 556px) {
+    .fix-img{
+      margin-left: 22%;
+    }
+  }

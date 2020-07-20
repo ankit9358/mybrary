@@ -1,7 +1,12 @@
-<h2>New Book</h2>
-<form action="/books" method="POST">
-
-    <%- include('_form_fields.ejs') %>
-    <a href="/books">Cancel</a>
-    <button type="submit">Create</button>
-</form>
+<br>
+<div align="center">
+    <h2 class="display-4">New Book</h2>
+    <br>
+    <form action="/books" method="POST">
+        <%- include('_form_fields.ejs') %>
+        <br>
+        <a href="/authors"><button class="btn btn-danger mb-2">Cancel</button></a>
+        <button type="submit" class="btn btn-success mb-2">Create</button>
+      </form>
+  </div>
+</div>
