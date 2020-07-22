@@ -20,7 +20,6 @@ router.get('/', async (req, res) => {
     }
     try {
         const books = await query.exec();
-        // const authors = await Author.find(searchOption)
         res.render('books/index', {
             books: books,
             searchOption: req.query

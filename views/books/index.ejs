@@ -33,7 +33,7 @@
     <% books.forEach(book => { %>
     <div class="container fix-img">
         <div class="box">
-            <a href="/books/<%= book.id %>"><img height="250" width="210" src="<%= book.sendCoverPath %>"></a>
+            <a href="/books/<%= book.id %>"><img class="zoom" height="250" width="210" src="<%= book.sendCoverPath %>"></a>
             <%- include('../partials/deleteForm', { url: `/books/${book.id}/delete`}) %>
             <a href="/books/<%= book.id %>/edit"><button class="btn btn-primary">Edit Book</button></a>
         </div>

@@ -1,3 +1,10 @@
+html,body{
+  background: linear-gradient(to right, #99ffcc 0%, #ffffff 80%);
+  /* background-size: cover; */
+}
+
+
+
 .form-control-borderless {
     border: none;
 }
@@ -46,7 +53,10 @@
   }
   .box img{
     margin: 15px;
+    border-width: thick;
+    border-style: solid;
     border-radius: 15px;
+    border-color: black;
   }
   .box button{
     margin: 5px 6px 15px 22.5px;
@@ -78,4 +88,16 @@
     .fix-img{
       margin-left: 10%;
     }
+  }
+
+  .zoom{
+    transition: transform .3s;
+  }
+
+  .zoom:hover {
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  
+  .zoom img:hover{
+    box-shadow: 5px 10px 10px #888888;
   }
