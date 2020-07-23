@@ -101,3 +101,19 @@ html,body{
   .zoom img:hover{
     box-shadow: 5px 10px 10px #888888;
   }
+  .MYLIB {
+    font-size: 60px;
+    font-family: "BeyondControl";
+    color: rgb( 255, 255, 255 );
+    text-shadow: 1px 1px 10px #e3c058;
+    z-index: 2;
+  }
+  
+  .nav-item a{
+    font-weight: 200;
+    text-shadow: 1px 1px 10px #e3c058;
+  }
+  
+  .display-4{
+  text-shadow: 1px 1px 10px #1d2124;
+  }
